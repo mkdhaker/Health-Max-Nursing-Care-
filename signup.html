@@ -21,16 +21,25 @@
     </header>
 
     <section class="main-content">
-        <h2>Signup</h2>
-    <form action="signup.php" method="post">
-        <label for="username">Username:</label>
-        <input type="text" name="username" required><br>
+        <h2>Sign Up</h2>
+        <form action="signup.php" method="post" class="signup-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
 
-        <label for="password">Password:</label>
-        <input type="password" name="password" required><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
 
-        <input type="submit" value="Sign Up">
-    </form>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+
+            <button type="submit">Sign Up</button>
+
+ <a href="login.html" class="login-btn">Login</a> 
+        
+	</form>
 	    
     </section>
 
