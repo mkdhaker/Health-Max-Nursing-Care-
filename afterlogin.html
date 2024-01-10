@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>After Login - Health Max Nursing Care</title>
+</head>
+<body>
+    <header>
+     <img src="logo-colour1.png" alt="Health Max Nursing Care Logo" id="logo">
+        <nav>
+            <ul>
+                <li><a href="afterlogin.html"class=active >Home</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="#">Messages</a></li>
+                <li><a href="index.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="main-content">
+        <h2>Welcome</h2>
+        <p>Find nursing officers and their contact details below:</p>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+    <input type="text" id="search" placeholder="Search by name or location...">
+    <button type="button" onclick="searchNursingOfficers()">Search</button>
+</div>
+
+<!-- Updated Nursing Officers List -->
+<ul class="nursing-officers-list" id="nursingOfficersList">
+    <li class="nursing-officer-box">
+        <h3><li><a href="manish-profile.html"> Manish Dhaker</a></li> </h3>
+        <p>Nursing Officer</p>
+        <p>Location: Udaipur, Rajasthan</p>
+    </li>
+    <li class="nursing-officer-box">
+        <h3>Name</h3>
+        <p>Nursing Officer</p>
+        <p>Location: Jaipur, Rajasthan</p>
+    </li>
+    <!-- Add more nursing officers as needed -->
+</ul>
+    </section>
+
+    <footer>
+    	
+    <!-- Social media links -->
+        <div class="social-media">
+            <a href="https://www.facebook.com/yourpage" target="_blank" rel="noopener noreferrer">
+                <img src="facebook-icon.png" alt="Facebook">
+            </a>
+            <a href="https://twitter.com/unboxing_gad25" target="_blank" rel="noopener noreferrer">
+                <img src="twitter-icon.png" alt="Twitter">
+            </a>
+            <a href="https://www.instagram.com/man_ish.dhaker?igsh=ZHo5NWVjYnlmbTdq" target="_blank" rel="noopener noreferrer">
+                <img src="instagram-icon.png" alt="Instagram">
+            </a>
+        </div>
+        
+        
+        <p>&copy; 2024 Health Max Nursing Care. All rights reserved.</p>
+    </footer>
+        
+        <script>
+    function searchNursingOfficers() {
+        var input, filter, ul, li, h3, p, i, txtValueName, txtValueLocation;
+        input = document.getElementById('search');
+        filter = input.value.toUpperCase();
+        ul = document.getElementById('nursingOfficersList');
+        li = ul.getElementsByTagName('li');
+
+        for (i = 0; i < li.length; i++) {
+            h3 = li[i].getElementsByTagName('h3')[0];
+            p = li[i].getElementsByTagName('p')[1]; // Assuming location is the second <p> in each <li>
+            if (h3 || p) {
+                txtValueName = h3.textContent || h3.innerText;
+                txtValueLocation = (p.textContent || p.innerText).toUpperCase();
+                
+                // Check if either name or location contains the filter
+                if (txtValueName.toUpperCase().indexOf(filter) > -1 || txtValueLocation.indexOf(filter) > -1) {
+                    li[i].style.display = '';
+                } else {
+                    li[i].style.display = 'none';
+                }
+            }
+        }
+    }
+</script>
+
+</body>
+</html>
+
+	<style>
+  #logo {
+        max-width:300px;
+        max-height: 200px;
+        margin-bottom: 20px;
+    }
+    <style>
+ 
